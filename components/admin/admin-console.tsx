@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { BarChart3, Download, LogOut, PackagePlus, Search } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { toast } from "sonner";
@@ -50,7 +50,7 @@ export function AdminConsole() {
 
   useEffect(() => { load(); }, [token]);
 
-  async function submitLogin(event: React.FormEvent) {
+  async function submitLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const res = await fetch("/api/auth", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(login) });
     const data = await res.json();
@@ -59,7 +59,7 @@ export function AdminConsole() {
     toast.success("Admin login successful.");
   }
 
-  async function addPart(event: React.FormEvent<HTMLFormElement>) {
+  async function addPart(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const body = Object.fromEntries(form);

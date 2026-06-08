@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Toaster } from "sonner";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
@@ -9,10 +10,10 @@ import { business } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: {
-    default: `${business.name} | Authorized Mahindra Workshop in Ranchi`,
+    default: `${business.name} | Mahindra Spare Parts & Specialized Workshop in Ranchi`,
     template: `%s | ${business.name}`
   },
-  description: "Authorized Mahindra workshop and genuine spare parts center in Ranchi since 2017.",
+  description: "Authorized Mahindra spare parts and specialized workshop for Mahindra cars in Ranchi since 2017.",
   openGraph: {
     title: business.name,
     description: business.tagline,
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>

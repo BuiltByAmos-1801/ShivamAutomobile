@@ -1,4 +1,6 @@
-export function PageHero({ title, eyebrow, children }: { title: string; eyebrow?: string; children?: React.ReactNode }) {
+import type { ReactNode } from "react";
+
+export function PageHero({ title, eyebrow, children }: { title: string; eyebrow?: string; children?: ReactNode }) {
   return (
     <section className="bg-zinc-950 text-white">
       <div className="container-pad py-14">

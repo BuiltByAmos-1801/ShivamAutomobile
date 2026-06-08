@@ -1,6 +1,6 @@
 # Shivam Automobiles
 
-A single-project Next.js 15 full-stack application for Shivam Automobiles, an authorized Mahindra workshop and genuine spare parts dealer in Ranchi.
+A single-project Next.js 15 full-stack application for Shivam Automobiles, an authorized Mahindra spare parts and specialized Mahindra car workshop business in Ranchi.
 
 ## Tech Stack
 

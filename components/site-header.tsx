@@ -6,12 +6,12 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { business } from "@/lib/constants";
+import { MahindraLogo } from "@/components/mahindra-logo";
 
 const links = [
   ["Home", "/"],
   ["About", "/about"],
   ["Why Us", "/why-choose-us"],
-  ["Parts", "/parts"],
   ["Services", "/services"],
   ["Gallery", "/gallery"],
   ["Reviews", "/reviews"],
@@ -25,15 +25,16 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b bg-background/92 backdrop-blur">
       <div className="container-pad flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold">
-          <span className="grid size-9 place-items-center rounded-md bg-primary text-primary-foreground"><Wrench size={18} /></span>
+          <span className="grid h-9 w-9 place-items-center rounded-md bg-primary text-primary-foreground"><Wrench size={18} /></span>
           <span>{business.name}</span>
         </Link>
+        <MahindraLogo className="hidden lg:inline-flex" />
         <nav className="hidden items-center gap-6 text-sm font-medium lg:flex">
           {links.map(([label, href]) => <Link key={href} href={href} className="hover:text-primary">{label}</Link>)}
         </nav>
         <div className="flex items-center gap-2">
           <Button variant="ghost" className="w-10 px-0" aria-label="Toggle dark mode" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-            <Sun className="size-4 dark:hidden" /><Moon className="hidden size-4 dark:block" />
+            <Sun className="h-4 w-4 dark:hidden" /><Moon className="hidden h-4 w-4 dark:block" />
           </Button>
           <Button asChild className="hidden sm:inline-flex"><Link href="/booking">Book Service</Link></Button>
           <Button variant="outline" className="w-10 px-0 lg:hidden" aria-label="Open menu" onClick={() => setOpen(!open)}><Menu size={18} /></Button>

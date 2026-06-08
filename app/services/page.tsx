@@ -10,7 +10,7 @@ export const metadata = { title: "Garage Services" };
 export default function ServicesPage() {
   return (
     <>
-      <PageHero title="Garage Services" eyebrow="Workshop">Expert maintenance, repair, diagnostics, and service booking support.</PageHero>
+      <PageHero title="Garage Services" eyebrow="Workshop">Specialized Mahindra car maintenance, repair, diagnostics, and service booking support.</PageHero>
       <section className="section">
         <div className="container-pad grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {serviceTypes.map((service, index) => (
@@ -20,7 +20,7 @@ export default function ServicesPage() {
               </div>
               <CardHeader><CardTitle>{service}</CardTitle></CardHeader>
               <CardContent className="space-y-4 text-sm text-muted-foreground">
-                <p>Professional Mahindra workshop support with careful inspection, reliable parts, and clear status updates.</p>
+                <p>Specialized Mahindra car workshop support with careful inspection, reliable parts, and clear status updates.</p>
                 <Button asChild><Link href="/booking">Book Service</Link></Button>
               </CardContent>
             </Card>
