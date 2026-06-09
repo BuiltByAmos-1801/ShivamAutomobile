@@ -40,3 +40,4 @@ Username defaults to `admin`. Password is read from `ADMIN_PASSWORD`.
 
 Use strong values for `JWT_SECRET` and `ADMIN_PASSWORD`. Configure MongoDB Atlas in `MONGODB_URI`. Add Cloudinary credentials for production image uploads.
 "# ShivamAutomobile" 
+"# ShivamAutomobile" 
