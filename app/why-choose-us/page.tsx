@@ -17,7 +17,7 @@ const features = [
 export default function WhyChooseUsPage() {
   return (
     <>
-      <PageHero title="Why Choose Shivam Automobiles" eyebrow="Workshop Advantage">Reliable Mahindra car repairs, authorized spare parts, and customer-focused service since 2017.</PageHero>
+      <PageHero title="Why Choose Shivam Automobiles" eyebrow="Workshop Advantage">Reliable Mahindra car repairs, authorized spare parts, and customer-focused service since 2019.</PageHero>
       <section className="section">
         <div className="container-pad">
           <div className="mb-8 overflow-hidden rounded-lg bg-zinc-950 text-white shadow-premium">
@@ -30,7 +30,7 @@ export default function WhyChooseUsPage() {
                 <Image src="/workshop/workshop-10.jpg" alt="Workshop customer entry" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-5 left-5">
-                  <p className="text-4xl font-bold">2017</p>
+                  <p className="text-4xl font-bold">2019</p>
                   <p className="mt-1 text-sm text-zinc-200">Trusted service journey in Ranchi</p>
                 </div>
               </div>
