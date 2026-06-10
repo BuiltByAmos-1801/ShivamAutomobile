@@ -24,14 +24,14 @@ export function SiteFooter() {
           <Link className="transition hover:text-red-200" href="/admin">Admin Login</Link>
         </div>
       </div>
-      <div className="border-t border-zinc-800">
-        <div className="container-pad flex flex-col justify-between gap-6 py-8 sm:flex-row sm:items-center">
-          <div className="text-sm text-white">
+      <div className="relative z-10 border-t border-white/15 bg-zinc-950/95">
+        <div className="container-pad flex flex-col justify-between gap-6 py-8 text-white sm:flex-row sm:items-center">
+          <div className="text-base font-semibold">
             <div>© {new Date().getFullYear()} {business.name}. All rights reserved.</div>
           </div>
-          <div className="text-center text-white">
-            <div className="text-sm font-semibold">Developed by <Link href="https://builtbyamos.great-site.net/" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 transition underline">Built By Amos</Link></div>
-            <div className="mt-1 text-xs">Web Development & Design</div>
+          <div className="text-center sm:text-right">
+            <div className="text-base font-semibold">Developed by <Link href="https://builtbyamos.great-site.net/" target="_blank" rel="noopener noreferrer" className="text-red-200 underline decoration-red-200/70 underline-offset-2 transition hover:text-white">Built By Amos</Link></div>
+            <div className="mt-1 text-sm font-medium text-zinc-100">Web Development & Design</div>
           </div>
         </div>
       </div>
