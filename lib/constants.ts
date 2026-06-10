@@ -1,14 +1,14 @@
 export const business = {
   name: "Shivam Automobiles",
   owner: "Dhananjay Chaudary",
-  established: "2017",
+  established: "2019",
   type: "Authorized Mahindra Spare Parts & Specialized Workshop for Mahindra Cars",
   address: "Chowk, Ranchi Ring Rd, Tilta, Ranchi, Jharkhand 835222, India",
   phone: "+91 6299088398",
   whatsapp: "916299088398",
   email: "shivamauto2015@gmail.com",
   hours: "9:30 AM - 6:30 PM",
-  tagline: "Authorized Mahindra Spare Parts & Specialized Mahindra Car Workshop Since 2017"
+  tagline: "Authorized Mahindra Spare Parts & Specialized Mahindra Car Workshop Since 2019"
 };
 
 export const partCategories = [
