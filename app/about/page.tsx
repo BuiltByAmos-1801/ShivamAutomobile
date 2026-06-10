@@ -9,7 +9,7 @@ export const metadata = { title: "About" };
 export default function AboutPage() {
   return (
     <>
-      <PageHero title="About Shivam Automobiles" eyebrow="Established 2017">Specialized Mahindra car workshop led by {business.owner}, serving Ranchi with dependable repairs and authorized spare parts.</PageHero>
+      <PageHero title="About Shivam Automobiles" eyebrow="Established 2019">Specialized Mahindra car workshop led by {business.owner}, serving Ranchi with dependable repairs and authorized spare parts.</PageHero>
       <section className="section">
         <div className="container-pad grid gap-6 md:grid-cols-3">
           {([
@@ -40,7 +40,7 @@ export default function AboutPage() {
                 <h2 className="mt-2 text-3xl font-bold">Timeline</h2>
                 <div className="mt-6 grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-white/10 bg-white/10 p-5">
-                    <p className="text-3xl font-bold">2017</p>
+                    <p className="text-3xl font-bold">2019</p>
                     <p className="mt-3 text-sm text-zinc-200">Shivam Automobiles begins specialized Mahindra car workshop and authorized spare parts operations.</p>
                   </div>
                   <div className="rounded-lg border border-white/10 bg-white/10 p-5">
