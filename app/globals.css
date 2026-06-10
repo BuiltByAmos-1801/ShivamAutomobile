@@ -7,13 +7,16 @@
   --foreground: 222 47% 11%;
   --card: 0 0% 100%;
   --card-foreground: 222 47% 11%;
-  --primary: 356 82% 44%;
+  --primary: 357 83% 46%;
   --primary-foreground: 0 0% 100%;
   --muted: 210 40% 96%;
   --muted-foreground: 215 16% 47%;
   --border: 214 32% 91%;
   --input: 214 32% 91%;
   --ring: 356 82% 44%;
+  --accent: 174 72% 36%;
+  --accent-foreground: 0 0% 100%;
+  --gold: 38 92% 52%;
 }
 
 .dark {
@@ -21,13 +24,16 @@
   --foreground: 210 40% 98%;
   --card: 222 47% 11%;
   --card-foreground: 210 40% 98%;
-  --primary: 356 82% 49%;
+  --primary: 357 83% 48%;
   --primary-foreground: 0 0% 100%;
   --muted: 217 33% 17%;
   --muted-foreground: 215 20% 70%;
   --border: 217 33% 22%;
   --input: 217 33% 22%;
   --ring: 356 82% 54%;
+  --accent: 174 68% 44%;
+  --accent-foreground: 222 47% 8%;
+  --gold: 42 95% 58%;
 }
 
 * {
@@ -41,6 +47,10 @@ html {
 body {
   @apply min-h-screen bg-background text-foreground antialiased;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 8% 0%, hsl(var(--primary) / 0.055), transparent 26rem),
+    radial-gradient(circle at 96% 24%, hsl(var(--accent) / 0.045), transparent 24rem),
+    linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted) / 0.2) 44%, hsl(var(--background)));
 }
 
 .container-pad {
@@ -48,5 +58,141 @@ body {
 }
 
 .section {
-  @apply py-16 sm:py-20;
+  @apply py-14 sm:py-16 lg:py-20;
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.18);
+}
+
+.section,
+.page-hero-inner,
+.hero-reveal {
+  animation: rise-in 0.75s ease both;
+}
+
+.premium-surface {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border) / 0.86);
+  background:
+    linear-gradient(145deg, hsl(var(--card) / 0.98), hsl(var(--card) / 0.92)),
+    radial-gradient(circle at 0 0, hsl(var(--primary) / 0.055), transparent 20rem);
+  box-shadow: 0 14px 44px hsl(var(--primary) / 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.premium-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 0%, hsl(var(--primary) / 0.08) 40%, transparent 68%);
+  opacity: 0;
+  transform: translateX(-35%);
+  transition: opacity 240ms ease, transform 420ms ease;
+}
+
+.premium-surface:hover {
+  border-color: hsl(var(--primary) / 0.28);
+  box-shadow: 0 18px 54px hsl(222 47% 11% / 0.11);
+  transform: translateY(-2px);
+}
+
+.premium-surface:hover::before {
+  opacity: 1;
+  transform: translateX(35%);
+}
+
+.mesh-panel {
+  background:
+    linear-gradient(90deg, hsl(0 0% 100% / 0.045) 1px, transparent 1px),
+    linear-gradient(180deg, hsl(0 0% 100% / 0.045) 1px, transparent 1px),
+    linear-gradient(135deg, hsl(var(--primary) / 0.32), hsl(var(--accent) / 0.12), hsl(var(--gold) / 0.1));
+  background-size: 56px 56px, 56px 56px, 220% 220%;
+  animation: gradient-shift 16s ease infinite;
+}
+
+.soft-glass {
+  border: 1px solid hsl(var(--primary) / 0.12);
+  background: linear-gradient(145deg, hsl(var(--primary) / 0.08), hsl(0 0% 100% / 0.04));
+  box-shadow: 0 22px 64px hsl(0 0% 0% / 0.18);
+  backdrop-filter: blur(20px) saturate(132%);
+}
+
+.hero-image-zoom {
+  animation: slow-zoom 18s ease-in-out infinite alternate;
+}
+
+.floating-lift {
+  animation: floating-lift 4.8s ease-in-out infinite;
+}
+
+.stagger-1 {
+  animation-delay: 90ms;
+}
+
+.stagger-2 {
+  animation-delay: 180ms;
+}
+
+.stagger-3 {
+  animation-delay: 270ms;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0 0, 0 0, 0% 50%;
+  }
+  50% {
+    background-position: 16px 10px, 10px 16px, 100% 50%;
+  }
+}
+
+@keyframes slow-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes floating-lift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 640px) {
+  .premium-surface:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
 }

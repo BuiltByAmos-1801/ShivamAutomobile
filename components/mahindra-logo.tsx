@@ -1,15 +1,21 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function MahindraLogo({ className }: { className?: string }) {
   return (
-    <span
-      aria-label="Mahindra"
+    <div
       className={cn(
-        "inline-flex items-center rounded-sm border border-red-600 bg-white px-3 py-1 text-sm font-black uppercase tracking-normal text-red-600 shadow-sm",
+        "inline-flex h-14 w-56 items-center justify-center rounded-md border border-white/15 bg-black/70 px-3 py-2 shadow-lg shadow-black/20 ring-1 ring-white/10",
         className
       )}
     >
-      Mahindra
-    </span>
+      <Image
+        src="/mahindra-logo-full.png"
+        alt="Mahindra logo"
+        width={485}
+        height={140}
+        className="h-full w-full object-contain drop-shadow-[0_8px_12px_rgba(0,0,0,0.35)]"
+      />
+    </div>
   );
 }
