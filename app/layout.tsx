@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: `${business.name} | Mahindra Spare Parts & Specialized Workshop in Ranchi`,
     template: `%s | ${business.name}`
   },
-  description: "Authorized Mahindra spare parts and specialized workshop for Mahindra cars in Ranchi since 2017.",
+  description: "Authorized Mahindra spare parts and specialized workshop for Mahindra cars in Ranchi since 2019.",
   openGraph: {
     title: business.name,
     description: business.tagline,
